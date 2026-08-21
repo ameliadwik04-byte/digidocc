@@ -1,0 +1,2468 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Workshop | PT PAL Indonesia</title>
+
+  <!-- Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <style>
+
+    :root {
+      --navy: #071b35;
+      --navy-dark: #041326;
+      --blue: #0868c7;
+      --blue-light: #1688ed;
+      --blue-soft: #eaf4ff;
+
+      --white: #ffffff;
+
+      --gray-50: #f7f9fc;
+      --gray-100: #eef2f6;
+      --gray-200: #e1e7ef;
+      --gray-400: #94a3b8;
+      --gray-500: #64748b;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1e293b;
+
+      --green: #168a48;
+      --green-bg: #eaf8ef;
+
+      --orange: #d97706;
+      --orange-bg: #fff5e5;
+
+      --red: #dc2626;
+      --red-bg: #fff0f0;
+
+      --shadow: 0 5px 20px rgba(7, 27, 53, 0.07);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-800);
+      min-height: 100vh;
+    }
+
+    button,
+    input,
+    select {
+      font-family: inherit;
+    }
+
+    /* ==========================================
+       HEADER
+    ========================================== */
+
+    .header {
+      height: 74px;
+      background: var(--navy);
+      color: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 42px;
+
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+
+      border-radius: 9px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: linear-gradient(
+        135deg,
+        var(--blue-light),
+        var(--blue)
+      );
+
+      box-shadow:
+        0 5px 15px rgba(22, 136, 237, 0.25);
+    }
+
+    .brand-logo i {
+      font-size: 19px;
+    }
+
+    .brand-text h1 {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+    }
+
+    .brand-text p {
+      margin-top: 3px;
+
+      font-size: 9px;
+      color: #91a9c5;
+
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .header-date {
+      font-size: 11px;
+      color: #a9bad0;
+    }
+
+    .header-user {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      padding-left: 18px;
+      border-left: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .avatar {
+      width: 31px;
+      height: 31px;
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #174b7e;
+      color: #a8d7fa;
+
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .header-user span {
+      font-size: 11px;
+      color: white;
+    }
+
+
+    /* ==========================================
+       MAIN
+    ========================================== */
+
+    .main {
+      width: 100%;
+      max-width: 1500px;
+
+      margin: auto;
+
+      padding: 36px 42px 60px;
+    }
+
+
+    /* ==========================================
+       PAGE TITLE
+    ========================================== */
+
+    .page-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      margin-bottom: 27px;
+    }
+
+    .page-title small {
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+    }
+
+    .page-title h2 {
+      margin-top: 7px;
+
+      color: var(--navy);
+
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .page-title p {
+      margin-top: 7px;
+
+      color: var(--gray-500);
+      font-size: 12px;
+    }
+
+    .project-total {
+      text-align: right;
+    }
+
+    .project-total strong {
+      display: block;
+
+      color: var(--navy);
+
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+    .project-total span {
+      color: var(--gray-500);
+      font-size: 10px;
+    }
+
+
+    /* ==========================================
+       FILTER
+    ========================================== */
+
+    .filter-container {
+      background: white;
+
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+
+      padding: 13px;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      box-shadow: var(--shadow);
+
+      margin-bottom: 25px;
+    }
+
+    .search {
+      flex: 1;
+      position: relative;
+    }
+
+    .search i {
+      position: absolute;
+
+      left: 13px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: var(--gray-400);
+      font-size: 12px;
+    }
+
+    .search input {
+      width: 100%;
+      height: 39px;
+
+      border: 1px solid var(--gray-200);
+      border-radius: 7px;
+
+      background: var(--gray-50);
+
+      outline: none;
+
+      padding: 0 12px 0 36px;
+
+      color: var(--gray-700);
+      font-size: 11px;
+
+      transition: 0.2s;
+    }
+
+    .search input:focus {
+      background: white;
+      border-color: var(--blue);
+
+      box-shadow:
+        0 0 0 3px rgba(8, 104, 199, 0.08);
+    }
+
+    .filter-select {
+      height: 39px;
+      min-width: 160px;
+
+      border: 1px solid var(--gray-200);
+      border-radius: 7px;
+
+      background: white;
+
+      color: var(--gray-600);
+
+      padding: 0 11px;
+
+      font-size: 11px;
+
+      outline: none;
+
+      cursor: pointer;
+    }
+
+
+    /* ==========================================
+       SECTION TITLE
+    ========================================== */
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 13px;
+    }
+
+    .section-title h3 {
+      color: var(--navy);
+
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .section-title span {
+      color: var(--gray-500);
+      font-size: 10px;
+    }
+
+
+    /* ==========================================
+       PROJECT GRID
+    ========================================== */
+
+    .projects {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 18px;
+    }
+
+
+    /* ==========================================
+       PROJECT CARD
+    ========================================== */
+
+    .project-card {
+      background: white;
+
+      border: 1px solid var(--gray-200);
+      border-radius: 11px;
+
+      overflow: hidden;
+
+      box-shadow: var(--shadow);
+
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        border-color 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+
+      border-color: #c4dced;
+
+      box-shadow:
+        0 12px 30px rgba(7, 27, 53, 0.10);
+    }
+
+    .card-line {
+      height: 4px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--blue),
+          var(--blue-light)
+        );
+    }
+
+    .card-content {
+      padding: 19px;
+    }
+
+
+    /* PROJECT TOP */
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      gap: 10px;
+
+      margin-bottom: 13px;
+    }
+
+    .project-code {
+      color: var(--blue);
+
+      font-size: 9px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 1.1px;
+
+      margin-bottom: 5px;
+    }
+
+    .project-name {
+      color: var(--navy);
+
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .status {
+      padding: 5px 9px;
+
+      border-radius: 5px;
+
+      font-size: 9px;
+      font-weight: 600;
+
+      white-space: nowrap;
+    }
+
+    .status.active {
+      color: var(--green);
+      background: var(--green-bg);
+    }
+
+    .status.progress {
+      color: var(--blue);
+      background: var(--blue-soft);
+    }
+
+    .status.pending {
+      color: var(--orange);
+      background: var(--orange-bg);
+    }
+
+
+    /* DESCRIPTION */
+
+    .description {
+      color: var(--gray-500);
+
+      font-size: 11px;
+      line-height: 1.65;
+
+      min-height: 54px;
+
+      margin-bottom: 16px;
+    }
+
+
+    /* INFO */
+
+    .info-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      border-top: 1px solid var(--gray-100);
+      border-bottom: 1px solid var(--gray-100);
+
+      padding: 13px 0;
+
+      gap: 15px;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+
+      gap: 9px;
+    }
+
+    .info-icon {
+      width: 29px;
+      height: 29px;
+
+      flex-shrink: 0;
+
+      border-radius: 6px;
+
+      background: var(--blue-soft);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: var(--blue);
+
+      font-size: 10px;
+    }
+
+    .info label {
+      display: block;
+
+      color: var(--gray-400);
+
+      font-size: 8px;
+
+      margin-bottom: 3px;
+    }
+
+    .info strong {
+      display: block;
+
+      color: var(--gray-700);
+
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+
+    /* PROGRESS */
+
+    .progress {
+      padding-top: 15px;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+
+      margin-bottom: 7px;
+    }
+
+    .progress-header span {
+      color: var(--gray-500);
+      font-size: 9px;
+    }
+
+    .progress-header strong {
+      color: var(--navy);
+      font-size: 10px;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 5px;
+
+      background: var(--gray-100);
+
+      border-radius: 10px;
+
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--blue),
+          var(--blue-light)
+        );
+
+      border-radius: 10px;
+    }
+
+
+    /* FOOTER */
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-top: 16px;
+    }
+
+    .pic {
+      display: flex;
+      align-items: center;
+
+      gap: 8px;
+    }
+
+    .pic-avatar {
+      width: 28px;
+      height: 28px;
+
+      border-radius: 50%;
+
+      background: #dcecff;
+
+      color: var(--blue);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 9px;
+      font-weight: 700;
+    }
+
+    .pic label {
+      display: block;
+
+      color: var(--gray-400);
+
+      font-size: 8px;
+
+      margin-bottom: 2px;
+    }
+
+    .pic strong {
+      display: block;
+
+      color: var(--gray-700);
+
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    .detail-btn {
+      border: none;
+      background: transparent;
+
+      color: var(--blue);
+
+      font-size: 10px;
+      font-weight: 500;
+
+      display: flex;
+      align-items: center;
+
+      gap: 5px;
+
+      padding: 7px;
+
+      border-radius: 5px;
+
+      cursor: pointer;
+    }
+
+    .detail-btn:hover {
+      background: var(--blue-soft);
+    }
+
+
+    /* ==========================================
+       EMPTY RESULT
+    ========================================== */
+
+    .empty {
+      display: none;
+
+      text-align: center;
+
+      background: white;
+
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+
+      padding: 60px 20px;
+
+      color: var(--gray-500);
+    }
+
+    .empty i {
+      color: var(--gray-300);
+      font-size: 30px;
+
+      margin-bottom: 12px;
+    }
+
+    .empty h3 {
+      color: var(--navy);
+
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .empty p {
+      font-size: 11px;
+    }
+
+
+    /* ==========================================
+       MODAL
+    ========================================== */
+
+    .modal-overlay {
+      position: fixed;
+
+      inset: 0;
+
+      background:
+        rgba(3, 18, 37, 0.65);
+
+      backdrop-filter: blur(4px);
+
+      display: none;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+
+      z-index: 1000;
+    }
+
+    .modal-overlay.show {
+      display: flex;
+    }
+
+    .modal {
+      width: 100%;
+      max-width: 650px;
+
+      background: white;
+
+      border-radius: 12px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 25px 70px rgba(0,0,0,0.25);
+
+      animation: showModal 0.2s ease;
+    }
+
+    @keyframes showModal {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal-header {
+      padding: 20px 22px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--navy),
+          #0d315c
+        );
+
+      color: white;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .modal-header small {
+      color: #77b9eb;
+
+      font-size: 9px;
+
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+
+    .modal-header h3 {
+      margin-top: 5px;
+
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .close {
+      width: 31px;
+      height: 31px;
+
+      border-radius: 6px;
+
+      border: 1px solid rgba(255,255,255,0.15);
+
+      background: rgba(255,255,255,0.08);
+
+      color: white;
+
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 22px;
+    }
+
+    .modal-description {
+      color: var(--gray-500);
+
+      font-size: 11px;
+      line-height: 1.7;
+
+      margin-bottom: 20px;
+    }
+
+    .modal-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      border: 1px solid var(--gray-200);
+
+      border-radius: 8px;
+
+      overflow: hidden;
+    }
+
+    .modal-info {
+      padding: 14px;
+
+      border-right: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .modal-info:nth-child(even) {
+      border-right: none;
+    }
+
+    .modal-info:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+
+    .modal-info label {
+      display: block;
+
+      color: var(--gray-400);
+
+      font-size: 8px;
+
+      margin-bottom: 5px;
+    }
+
+    .modal-info strong {
+      color: var(--gray-700);
+
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+
+      padding: 14px 22px;
+
+      background: var(--gray-50);
+
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .close-button {
+      border: 1px solid var(--gray-200);
+
+      background: white;
+
+      color: var(--gray-600);
+
+      padding: 9px 15px;
+
+      border-radius: 6px;
+
+      font-size: 10px;
+
+      cursor: pointer;
+    }
+
+
+    /* ==========================================
+       RESPONSIVE
+    ========================================== */
+
+    @media (max-width: 1100px) {
+
+      .projects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+    @media (max-width: 750px) {
+
+      .header {
+        padding: 0 20px;
+      }
+
+      .header-date {
+        display: none;
+      }
+
+      .main {
+        padding: 28px 20px 50px;
+      }
+
+      .page-header {
+        align-items: flex-start;
+      }
+
+      .project-total {
+        display: none;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 550px) {
+
+      .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .filter-select {
+        width: 100%;
+      }
+
+      .page-title h2 {
+        font-size: 24px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-info,
+      .modal-info:nth-child(even),
+      .modal-info:nth-last-child(-n+2) {
+        border-right: none;
+        border-bottom: 1px solid var(--gray-200);
+      }
+
+      .modal-info:last-child {
+        border-bottom: none;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- ==========================================
+       HEADER
+  ========================================== -->
+
+  <header class="header">
+
+    <div class="brand">
+
+      <div class="brand-logo">
+        <i class="fa-solid fa-anchor"></i>
+      </div>
+
+      <div class="brand-text">
+        <h1>PT PAL INDONESIA</h1>
+        <p>Workshop Management</p>
+      </div>
+
+    </div>
+
+
+    <div class="header-right">
+
+      <div class="header-date">
+        <i class="fa-regular fa-calendar"></i>
+        &nbsp; 21 August 2026
+      </div>
+
+      <div class="header-user">
+
+        <div class="avatar">
+          AD
+        </div>
+
+        <span>
+          Workshop Management
+        </span>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ==========================================
+       MAIN WORKSHOP
+  ========================================== -->
+
+  <main class="main">
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+      <div class="page-title">
+
+        <small>
+          PT PAL Indonesia
+        </small>
+
+        <h2>
+          Workshop
+        </h2>
+
+        <p>
+          Daftar project yang sedang ditangani dan dikelola
+          oleh PT PAL Indonesia.
+        </p>
+
+      </div>
+
+
+      <div class="project-total">
+
+        <strong id="totalProjects">
+          06
+        </strong>
+
+        <span>
+          Active Workshop Projects
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         SEARCH & FILTER
+    ========================================= -->
+
+    <section class="filter-container">
+
+      <div class="search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+          type="text"
+          id="search"
+          placeholder="Cari project atau PIC..."
+          oninput="filterProjects()"
+        >
+
+      </div>
+
+
+      <select
+        class="filter-select"
+        id="status"
+        onchange="filterProjects()"
+      >
+
+        <option value="all">
+          Semua Status
+        </option>
+
+        <option value="active">
+          Active
+        </option>
+
+        <option value="progress">
+          In Progress
+        </option>
+
+        <option value="pending">
+          Pending Review
+        </option>
+
+      </select>
+
+    </section>
+
+
+    <!-- ========================================
+         PROJECT TITLE
+    ========================================= -->
+
+    <div class="section-title">
+
+      <h3>
+        Project Workshop
+      </h3>
+
+      <span id="showing">
+        Menampilkan 6 project
+      </span>
+
+    </div>
+
+
+    <!-- ========================================
+         PROJECTS
+    ========================================= -->
+
+    <section class="projects" id="projects">
+
+
+      <!-- FRIGATE -->
+
+      <article
+        class="project-card"
+        data-name="frigate"
+        data-pic="Amelia Dwi Kusuma"
+        data-status="active"
+      >
+
+        <div class="card-line"></div>
+
+        <div class="card-content">
+
+          <div class="project-top">
+
+            <div>
+
+              <div class="project-code">
+                PRJ-2026-001
+              </div>
+
+              <h3 class="project-name">
+                Frigate
+              </h3>
+
+            </div>
+
+            <span class="status active">
+              Active
+            </span>
+
+          </div>
+
+
+          <p class="description">
+            Program pembangunan dan integrasi kapal frigate
+            untuk kebutuhan pertahanan maritim.
+          </p>
+
+
+          <div class="info-grid">
+
+            <div class="info">
+
+              <div class="info-icon">
+                <i class="fa-regular fa-calendar"></i>
+              </div>
+
+              <div>
+
+                <label>
+                  DURASI
+                </label>
+
+                <strong>
+                  24 Months
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="info">
+
+              <div class="info-icon">
+                <i class="fa-solid fa-industry"></i>
+              </div>
+
+              <div>
+
+                <label>
+                  WORKSHOP
+                </label>
+
+                <strong>
+                  Warship Yard
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="progress">
+
+            <div class="progress-header">
+
+              <span>
+                Project Progress
+              </span>
+
+              <strong>
+                78%
+              </strong>
+
+            </div>
+
+            <div class="progress-track">
+
+              <div
+                class="progress-bar"
+                style="width:78%"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <div class="card-footer">
+
+            <div class="pic">
+
+              <div class="pic-avatar">
+                BS
+              </div>
+
+              <div>
+
+                <label>
+                  PIC PROJECT
+                </label>
+
+                <strong>
+                  Amelia Dwi Kusuma
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <button
+              class="detail-btn"
+              onclick="openModal(
+                'Frigate',
+                'PRJ-2026-001',
+                'Amelia Dwi Kusuma',
+                '24 Months',
+                'Active',
+                '78%',
+                'Warship Yard',
+                'Program pembangunan dan integrasi kapal frigate untuk kebutuhan pertahanan maritim.'
+              )"
+            >
+              Detail
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- SCORPENE -->
+
+      <article
+        class="project-card"
+        data-name="scorpene"
+        data-pic="Andi Pratama"
+        data-status="progress"
+      >
+
+        <div class="card-line"></div>
+
+        <div class="card-content">
+
+          <div class="project-top">
+
+            <div>
+
+              <div class="project-code">
+                PRJ-2026-002
+              </div>
+
+              <h3 class="project-name">
+                Scorpene
+              </h3>
+
+            </div>
+
+            <span class="status progress">
+              In Progress
+            </span>
+
+          </div>
+
+
+          <p class="description">
+            Workshop dan engineering support untuk pembangunan
+            serta integrasi kapal selam kelas Scorpene.
+          </p>
+
+
+          <div class="info-grid">
+
+            <div class="info">
+
+              <div class="info-icon">
+                <i class="fa-regular fa-calendar"></i>
+              </div>
+
+              <div>
+
+                <label>
+                  DURASI
+                </label>
+
+                <strong>
+                  30 Months
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="info">
+
+              <div class="info-icon">
+                <i class="fa-solid fa-industry"></i>
+              </div>
+
+              <div>
+
+                <label>
+                  WORKSHOP
+                </label>
+
+                <strong>
+                  Submarine Facility
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="progress">
+
+            <div class="progress-header">
+
+              <span>
+                Project Progress
+              </span>
+
+              <strong>
+                61%
+              </strong>
+
+            </div>
+
+            <div class="progress-track">
+
+              <div
+                class="progress-bar"
+                style="width:61%"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <div class="card-footer">
+
+            <div class="pic">
+
+              <div class="pic-avatar">
+                AP
+              </div>
+
+              <div>
+
+                <label>
+                  PIC PROJECT
+                </label>
+
+                <strong>
+                  Andi Pratama
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <button
+              class="detail-btn"
+              onclick="openModal(
+                'Scorpene',
+                'PRJ-2026-002',
+                'Andi Pratama',
+                '30 Months',
+                'In Progress',
+                '61%',
+                'Submarine Facility',
+                'Workshop dan engineering support untuk pembangunan serta integrasi kapal selam kelas Scorpene.'
+              )"
+            >
+              Detail
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- AL MARIYAH -->
+
+      <article
+        class="project-card"
+        data-name="al mariyah"
+        data-pic="Rizky Hidayat"
+        data-status="active"
+      >
+
+        <div class="card-line"></div>
+
+        <div class="card-content">
+
+          <div class="project-top">
+
+            <div>
+
+              <div class="project-code">
+                PRJ-2026-003
+              </div>
+
+              <h3 class="project-name">
+                AL Mariyah
+              </h3>
+
+            </div>
+
+            <span class="status active">
+              Active
+            </span>
+
+          </div>
+
+
+          <p class="description">
+            Program maintenance, refurbishment, dan technical
+            support untuk armada AL Mariyah.
+          </p>
+
+
+          <div class="info-grid">
+
+            <div class="info">
+
+              <div class="info-icon">
+                <i class="fa-regular fa-calendar"></i>
+              </div>
+
+              <div>
+
+                <label>
+                  DURASI
+                </label>
+
+                <strong>
+                  18 Months
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="info">
+
+              <div class="info-icon">
+                <i class="fa-solid fa-industry"></i>
+              </div>
+
+              <div>
+
+                <label>
+                  WORKSHOP
+                </label>
+
+                <strong>
+                  Maintenance Yard
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="progress">
+
+            <div class="progress-header">
+
+              <span>
+                Project Progress
+              </span>
+
+              <strong>
+                84%
+              </strong>
+
+            </div>
+
+            <div class="progress-track">
+
+              <div
+                class="progress-bar"
+                style="width:84%"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <div class="card-footer">
+
+            <div class="pic">
+
+              <div class="pic-avatar">
+                RH
+              </div>
+
+              <div>
+
+                <label>
+                  PIC PROJECT
+                </label>
+
+                <strong>
+                  Rizky Hidayat
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <button
+              class="detail-btn"
+              onclick="openModal(
+                'AL Mariyah',
+                'PRJ-2026-003',
+                'Rizky Hidayat',
+                '18 Months',
+                'Active',
+                '84%',
+                'Maintenance Yard',
+                'Program maintenance, refurbishment, dan technical support untuk armada AL Mariyah.'
+              )"
+            >
+              Detail
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- FAST PATROL VESSEL -->
+
+      <article
+        class="project-card"
+        data-name="fast patrol vessel"
+        data-pic="Fajar Nugroho"
+        data-status="progress"
+      >
+
+        <div class="card-line"></div>
+
+        <div class="card-content">
+
+          <div class="project-top">
+
+            <div>
+
+              <div class="project-code">
+                PRJ-2026-004
+              </div>
+
+              <h3 class="project-name">
+                Fast Patrol Vessel
+              </h3>
+
+            </div>
+
+            <span class="status progress">
+              In Progress
+            </span>
+
+          </div>
+
+
+          <p class="description">
+            Pengembangan dan produksi kapal patroli cepat
+            untuk operasi keamanan wilayah perairan.
+          </p>
+
+
+          <div class="info-grid">
+
+            <div class="info">
+
+              <div class="info-icon">
+                <i class="fa-regular fa-calendar"></i>
+              </div>
+
+              <div>
+
+                <label>
+                  DURASI
+                </label>
+
+                <strong>
+                  14 Months
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="info">
+
+              <div class="info-icon">
+                <i class="fa-solid fa-industry"></i>
+              </div>
+
+              <div>
+
+                <label>
+                  WORKSHOP
+                </label>
+
+                <strong>
+                  Production Hall A
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="progress">
+
+            <div class="progress-header">
+
+              <span>
+                Project Progress
+              </span>
+
+              <strong>
+                46%
+              </strong>
+
+            </div>
+
+            <div class="progress-track">
+
+              <div
+                class="progress-bar"
+                style="width:46%"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <div class="card-footer">
+
+            <div class="pic">
+
+              <div class="pic-avatar">
+                FN
+              </div>
+
+              <div>
+
+                <label>
+                  PIC PROJECT
+                </label>
+
+                <strong>
+                  Fajar Nugroho
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <button
+              class="detail-btn"
+              onclick="openModal(
+                'Fast Patrol Vessel',
+                'PRJ-2026-004',
+                'Fajar Nugroho',
+                '14 Months',
+                'In Progress',
+                '46%',
+                'Production Hall A',
+                'Pengembangan dan produksi kapal patroli cepat untuk operasi keamanan wilayah perairan.'
+              )"
+            >
+              Detail
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- LST -->
+
+      <article
+        class="project-card"
+        data-name="landing ship tank"
+        data-pic="Dimas Wijaya"
+        data-status="pending"
+      >
+
+        <div class="card-line"></div>
+
+        <div class="card-content">
+
+          <div class="project-top">
+
+            <div>
+
+              <div class="project-code">
+                PRJ-2026-005
+              </div>
+
+              <h3 class="project-name">
+                Landing Ship Tank
+              </h3>
+
+            </div>
+
+            <span class="status pending">
+              Pending Review
+            </span>
+
+          </div>
+
+
+          <p class="description">
+            Modernisasi sistem dan structural improvement
+            untuk kapal Landing Ship Tank.
+          </p>
+
+
+          <div class="info-grid">
+
+            <div class="info">
+
+              <div class="info-icon">
+                <i class="fa-regular fa-calendar"></i>
+              </div>
+
+              <div>
+
+                <label>
+                  DURASI
+                </label>
+
+                <strong>
+                  20 Months
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="info">
+
+              <div class="info-icon">
+                <i class="fa-solid fa-industry"></i>
+              </div>
+
+              <div>
+
+                <label>
+                  WORKSHOP
+                </label>
+
+                <strong>
+                  Production Hall B
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="progress">
+
+            <div class="progress-header">
+
+              <span>
+                Project Progress
+              </span>
+
+              <strong>
+                32%
+              </strong>
+
+            </div>
+
+            <div class="progress-track">
+
+              <div
+                class="progress-bar"
+                style="width:32%"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <div class="card-footer">
+
+            <div class="pic">
+
+              <div class="pic-avatar">
+                DW
+              </div>
+
+              <div>
+
+                <label>
+                  PIC PROJECT
+                </label>
+
+                <strong>
+                  Dimas Wijaya
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <button
+              class="detail-btn"
+              onclick="openModal(
+                'Landing Ship Tank',
+                'PRJ-2026-005',
+                'Dimas Wijaya',
+                '20 Months',
+                'Pending Review',
+                '32%',
+                'Production Hall B',
+                'Modernisasi sistem dan structural improvement untuk kapal Landing Ship Tank.'
+              )"
+            >
+              Detail
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- CORVETTE -->
+
+      <article
+        class="project-card"
+        data-name="corvette"
+        data-pic="Agus Setiawan"
+        data-status="active"
+      >
+
+        <div class="card-line"></div>
+
+        <div class="card-content">
+
+          <div class="project-top">
+
+            <div>
+
+              <div class="project-code">
+                PRJ-2026-006
+              </div>
+
+              <h3 class="project-name">
+                Corvette
+              </h3>
+
+            </div>
+
+            <span class="status active">
+              Active
+            </span>
+
+          </div>
+
+
+          <p class="description">
+            Engineering, fabrication, dan system integration
+            untuk project kapal corvette.
+          </p>
+
+
+          <div class="info-grid">
+
+            <div class="info">
+
+              <div class="info-icon">
+                <i class="fa-regular fa-calendar"></i>
+              </div>
+
+              <div>
+
+                <label>
+                  DURASI
+                </label>
+
+                <strong>
+                  22 Months
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="info">
+
+              <div class="info-icon">
+                <i class="fa-solid fa-industry"></i>
+              </div>
+
+              <div>
+
+                <label>
+                  WORKSHOP
+                </label>
+
+                <strong>
+                  Warship Yard
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="progress">
+
+            <div class="progress-header">
+
+              <span>
+                Project Progress
+              </span>
+
+              <strong>
+                69%
+              </strong>
+
+            </div>
+
+            <div class="progress-track">
+
+              <div
+                class="progress-bar"
+                style="width:69%"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <div class="card-footer">
+
+            <div class="pic">
+
+              <div class="pic-avatar">
+                AS
+              </div>
+
+              <div>
+
+                <label>
+                  PIC PROJECT
+                </label>
+
+                <strong>
+                  Agus Setiawan
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <button
+              class="detail-btn"
+              onclick="openModal(
+                'Corvette',
+                'PRJ-2026-006',
+                'Agus Setiawan',
+                '22 Months',
+                'Active',
+                '69%',
+                'Warship Yard',
+                'Engineering, fabrication, dan system integration untuk project kapal corvette.'
+              )"
+            >
+              Detail
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- EMPTY -->
+
+    <div
+      class="empty"
+      id="empty"
+    >
+
+      <i class="fa-solid fa-folder-open"></i>
+
+      <h3>
+        Project tidak ditemukan
+      </h3>
+
+      <p>
+        Coba gunakan kata kunci atau filter status yang berbeda.
+      </p>
+
+    </div>
+
+  </main>
+
+
+  <!-- ==========================================
+       DETAIL MODAL
+  ========================================== -->
+
+  <div
+    class="modal-overlay"
+    id="modal"
+    onclick="closeOutside(event)"
+  >
+
+    <div class="modal">
+
+      <div class="modal-header">
+
+        <div>
+
+          <small id="modalCode">
+            PROJECT DETAIL
+          </small>
+
+          <h3 id="modalTitle">
+            Frigate
+          </h3>
+
+        </div>
+
+        <button
+          class="close"
+          onclick="closeModal()"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+      </div>
+
+
+      <div class="modal-body">
+
+        <p
+          class="modal-description"
+          id="modalDescription"
+        ></p>
+
+
+        <div class="modal-grid">
+
+          <div class="modal-info">
+
+            <label>
+              PROJECT CODE
+            </label>
+
+            <strong id="modalProjectCode">
+              -
+            </strong>
+
+          </div>
+
+
+          <div class="modal-info">
+
+            <label>
+              STATUS
+            </label>
+
+            <strong id="modalStatus">
+              -
+            </strong>
+
+          </div>
+
+
+          <div class="modal-info">
+
+            <label>
+              PIC PROJECT
+            </label>
+
+            <strong id="modalPIC">
+              -
+            </strong>
+
+          </div>
+
+
+          <div class="modal-info">
+
+            <label>
+              DURASI
+            </label>
+
+            <strong id="modalDuration">
+              -
+            </strong>
+
+          </div>
+
+
+          <div class="modal-info">
+
+            <label>
+              WORKSHOP
+            </label>
+
+            <strong id="modalWorkshop">
+              -
+            </strong>
+
+          </div>
+
+
+          <div class="modal-info">
+
+            <label>
+              PROGRESS
+            </label>
+
+            <strong id="modalProgress">
+              -
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="modal-footer">
+
+        <button
+          class="close-button"
+          onclick="closeModal()"
+        >
+          Tutup
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================
+       JAVASCRIPT
+  ========================================== -->
+
+  <script>
+
+    function filterProjects() {
+
+      const search =
+        document
+          .getElementById("search")
+          .value
+          .toLowerCase()
+          .trim();
+
+      const status =
+        document
+          .getElementById("status")
+          .value;
+
+      const cards =
+        document.querySelectorAll(".project-card");
+
+      let count = 0;
+
+
+      cards.forEach(card => {
+
+        const name =
+          card.dataset.name.toLowerCase();
+
+        const pic =
+          card.dataset.pic.toLowerCase();
+
+        const cardStatus =
+          card.dataset.status;
+
+
+        const matchSearch =
+          name.includes(search) ||
+          pic.includes(search);
+
+        const matchStatus =
+          status === "all" ||
+          cardStatus === status;
+
+
+        if (
+          matchSearch &&
+          matchStatus
+        ) {
+
+          card.style.display = "";
+
+          count++;
+
+        } else {
+
+          card.style.display = "none";
+
+        }
+
+      });
+
+
+      document.getElementById(
+        "showing"
+      ).textContent =
+        `Menampilkan ${count} project`;
+
+
+      document.getElementById(
+        "totalProjects"
+      ).textContent =
+        String(count).padStart(2, "0");
+
+
+      document.getElementById(
+        "empty"
+      ).style.display =
+        count === 0 ? "block" : "none";
+
+    }
+
+
+    /* ========================================
+       MODAL
+    ======================================== */
+
+    function openModal(
+      title,
+      code,
+      pic,
+      duration,
+      status,
+      progress,
+      workshop,
+      description
+    ) {
+
+      document.getElementById(
+        "modalTitle"
+      ).textContent = title;
+
+
+      document.getElementById(
+        "modalCode"
+      ).textContent = code;
+
+
+      document.getElementById(
+        "modalDescription"
+      ).textContent = description;
+
+
+      document.getElementById(
+        "modalProjectCode"
+      ).textContent = code;
+
+
+      document.getElementById(
+        "modalPIC"
+      ).textContent = pic;
+
+
+      document.getElementById(
+        "modalDuration"
+      ).textContent = duration;
+
+
+      document.getElementById(
+        "modalStatus"
+      ).textContent = status;
+
+
+      document.getElementById(
+        "modalProgress"
+      ).textContent = progress;
+
+
+      document.getElementById(
+        "modalWorkshop"
+      ).textContent = workshop;
+
+
+      document
+        .getElementById("modal")
+        .classList.add("show");
+
+
+      document.body.style.overflow = "hidden";
+
+    }
+
+
+    function closeModal() {
+
+      document
+        .getElementById("modal")
+        .classList.remove("show");
+
+      document.body.style.overflow = "";
+
+    }
+
+
+    function closeOutside(event) {
+
+      if (
+        event.target ===
+        document.getElementById("modal")
+      ) {
+
+        closeModal();
+
+      }
+
+    }
+
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (event.key === "Escape") {
+          closeModal();
+        }
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
