@@ -1,4 +1,20 @@
+/* =====================================================
+   SMARTRAIL DASHBOARD CSS
+   Based on existing dashboard.html
+   Theme: Navy | Blue | Light Blue | White
+===================================================== */
 
+
+/* =====================================================
+   1. GOOGLE FONT
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* =====================================================
+   2. RESET
+===================================================== */
 
 * {
     margin: 0;
@@ -6,70 +22,833 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Poppins, sans-serif;
-    background: url('img/DJI_0710.jpg') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
+
+/* =====================================================
+   3. COLOR VARIABLES
+===================================================== */
+
+:root {
+
+    --navy-dark: #031A38;
+    --navy: #062B5B;
+    --navy-light: #0A438C;
+
+    --blue: #176BCE;
+    --blue-light: #4DA3FF;
+    --sky-blue: #8ED3FF;
+
+    --bg-light: #F4F8FC;
+    --bg-blue: #EAF4FC;
+
+    --text-dark: #183153;
+    --text-gray: #718096;
+
+    --white: #FFFFFF;
+
+    --border: #DCE9F5;
+
+    --shadow-sm:
+        0 5px 15px rgba(6, 43, 91, 0.08);
+
+    --shadow-md:
+        0 12px 30px rgba(6, 43, 91, 0.12);
+
+    --shadow-lg:
+        0 25px 60px rgba(0, 0, 0, 0.25);
+
+    --radius-sm: 10px;
+    --radius-md: 18px;
+    --radius-lg: 28px;
+
+    --transition:
+        all 0.3s ease;
 }
+
+
+/* =====================================================
+   4. BODY
+===================================================== */
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(3, 26, 56, 0.88),
+            rgba(6, 43, 91, 0.75),
+            rgba(23, 107, 206, 0.45)
+        ),
+
+        url('img/DJI_0710.jpg')
+        center center / cover
+        fixed
+        no-repeat;
+}
+
+
+/* =====================================================
+   5. BACKGROUND EFFECT
+===================================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            circle at top left,
+            rgba(142, 211, 255, 0.15),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            rgba(23, 107, 206, 0.2),
+            transparent 35%
+        );
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =====================================================
+   6. MAIN CONTAINER
+===================================================== */
 
 .container {
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
+
+    position: relative;
+
     width: 80%;
+
     max-width: 1200px;
+
+    min-height: 500px;
+
+    padding: 45px;
+
+    background:
+        rgba(255, 255, 255, 0.96);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.7);
+
+    border-radius:
+        var(--radius-lg);
+
+    backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        var(--shadow-lg);
+
+    overflow: hidden;
+
+    animation:
+        popupEnter 0.6s ease;
 }
 
-h1, h2, h3 {
-    margin-bottom: 20px;
-    text-align: center;
+
+/* =====================================================
+   7. DECORATIVE TOP LINE
+===================================================== */
+
+.container::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--navy-dark),
+            var(--blue),
+            var(--sky-blue)
+        );
 }
+
+
+/* =====================================================
+   8. LOGOUT BUTTON
+===================================================== */
+
+#logout {
+
+    position: absolute !important;
+
+    top: 25px !important;
+
+    left: 25px !important;
+
+    padding:
+        9px 16px;
+
+    font-family:
+        'Poppins', sans-serif;
+
+    font-size:
+        0.75rem;
+
+    font-weight:
+        600;
+
+    color:
+        var(--navy);
+
+    background:
+        var(--bg-blue);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-sm);
+
+    cursor:
+        pointer;
+
+    transition:
+        var(--transition);
+
+    z-index: 5;
+}
+
+
+#logout:hover {
+
+    color:
+        var(--white);
+
+    background:
+        var(--blue);
+
+    border-color:
+        var(--blue);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 6px 15px
+        rgba(23, 107, 206, 0.2);
+}
+
+
+/* =====================================================
+   9. MAIN TITLE
+===================================================== */
+
+.container > h1 {
+
+    margin-top:
+        15px;
+
+    margin-bottom:
+        35px;
+
+    text-align:
+        center;
+
+    color:
+        var(--navy);
+
+    font-size:
+        2rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        -0.5px;
+}
+
+
+/* =====================================================
+   10. TITLE DECORATION
+===================================================== */
+
+.container > h1::after {
+
+    content: "";
+
+    display: block;
+
+    width: 60px;
+
+    height: 4px;
+
+    margin: 12px auto 0;
+
+    border-radius:
+        50px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--navy),
+            var(--blue)
+        );
+}
+
+
+/* =====================================================
+   11. NAVIGATION
+===================================================== */
+
+nav {
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   12. NAVIGATION LIST
+===================================================== */
 
 nav ul {
-    display: flex;
-    justify-content: space-around;
-    list-style-type: none;
-    margin-bottom: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        20px;
+
+    list-style:
+        none;
+
+    margin:
+        0;
+
+    padding:
+        0;
 }
 
-nav ul li a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #003366;
+
+/* =====================================================
+   13. NAVIGATION ITEM
+===================================================== */
+
+nav ul li {
+
+    width:
+        100%;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+
+/* =====================================================
+   14. DASHBOARD BUTTON
+===================================================== */
+
+nav ul li button {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    min-height:
+        120px;
+
+    padding:
+        25px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    font-family:
+        'Poppins', sans-serif;
+
+    font-size:
+        0.95rem;
+
+    font-weight:
+        600;
+
+    line-height:
+        1.5;
+
+    color:
+        var(--navy);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #F5FAFF
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-md);
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        var(--shadow-sm);
+
+    transition:
+        var(--transition);
+
+    overflow:
+        hidden;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+
+/* =====================================================
+   15. BUTTON TOP ACCENT
+===================================================== */
+
+nav ul li button::before {
+
+    content: "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        5px;
+
+    height:
+        100%;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            var(--navy),
+            var(--blue)
+        );
+
+    transition:
+        var(--transition);
 }
 
-input, select {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+/* =====================================================
+   16. BUTTON HOVER
+===================================================== */
+
+nav ul li button:hover {
+
+    transform:
+        translateY(-6px);
+
+    color:
+        var(--white);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--navy),
+            var(--blue)
+        );
+
+    border-color:
+        var(--blue);
+
+    box-shadow:
+        var(--shadow-md);
 }
 
-button {
-    padding: 10px;
-    background-color: #003366;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+
+nav ul li button:hover::before {
+
+    width:
+        100%;
+
+    opacity:
+        0.12;
 }
 
-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05); /* Scale up on hover */
+
+/* =====================================================
+   17. BUTTON ACTIVE
+===================================================== */
+
+nav ul li button:active {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =====================================================
+   18. INDIVIDUAL MENU ACCENTS
+===================================================== */
+
+/* View Map */
+
+nav ul li:nth-child(1) button::after {
+
+    content: "MAP";
+
+    position:
+        absolute;
+
+    top:
+        12px;
+
+    right:
+        15px;
+
+    font-size:
+        0.55rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1px;
+
+    color:
+        var(--blue);
+
+    opacity:
+        0.7;
+}
+
+
+/* Dock Arrangement */
+
+nav ul li:nth-child(2) button::after {
+
+    content: "DOCK";
+
+    position:
+        absolute;
+
+    top:
+        12px;
+
+    right:
+        15px;
+
+    font-size:
+        0.55rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1px;
+
+    color:
+        var(--blue);
+
+    opacity:
+        0.7;
+}
+
+
+/* Contract */
+
+nav ul li:nth-child(3) button::after {
+
+    content: "LEGAL";
+
+    position:
+        absolute;
+
+    top:
+        12px;
+
+    right:
+        15px;
+
+    font-size:
+        0.55rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1px;
+
+    color:
+        var(--blue);
+
+    opacity:
+        0.7;
+}
+
+
+/* MRO */
+
+nav ul li:nth-child(4) button::after {
+
+    content: "DATABASE";
+
+    position:
+        absolute;
+
+    top:
+        12px;
+
+    right:
+        15px;
+
+    font-size:
+        0.55rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1px;
+
+    color:
+        var(--blue);
+
+    opacity:
+        0.7;
+}
+
+
+/* =====================================================
+   19. ANIMATION
+===================================================== */
+
+@keyframes popupEnter {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(30px)
+            scale(0.98);
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   20. TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+
+    body {
+
+        padding:
+            20px;
+    }
+
+
+    .container {
+
+        width:
+            95%;
+
+        padding:
+            35px 25px;
+
+        border-radius:
+            22px;
+    }
+
+
+    .container > h1 {
+
+        font-size:
+            1.7rem;
+
+        margin-bottom:
+            30px;
+    }
+
+
+    nav ul {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap:
+            15px;
+    }
+
+
+    nav ul li button {
+
+        min-height:
+            110px;
+
+        padding:
+            20px;
+
+        font-size:
+            0.85rem;
+    }
+
+}
+
+
+/* =====================================================
+   21. MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    body {
+
+        padding:
+            10px;
+
+        align-items:
+            flex-start;
+    }
+
+
+    .container {
+
+        width:
+            100%;
+
+        margin:
+            10px 0;
+
+        padding:
+            70px 18px 25px;
+
+        border-radius:
+            18px;
+    }
+
+
+    #logout {
+
+        top:
+            20px !important;
+
+        left:
+            20px !important;
+    }
+
+
+    .container > h1 {
+
+        font-size:
+            1.35rem;
+
+        margin-bottom:
+            25px;
+    }
+
+
+    nav ul {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            14px;
+    }
+
+
+    nav ul li button {
+
+        min-height:
+            90px;
+
+        font-size:
+            0.85rem;
+    }
+
+}
+
+
+/* =====================================================
+   22. VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .container {
+
+        padding:
+            65px 14px 20px;
+    }
+
+
+    .container > h1 {
+
+        font-size:
+            1.2rem;
+    }
+
+
+    nav ul li button {
+
+        min-height:
+            80px;
+
+        font-size:
+            0.8rem;
+    }
+
 }
