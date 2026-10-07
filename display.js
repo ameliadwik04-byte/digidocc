@@ -262,6 +262,10 @@ function renderTimeline(timelineContainerId, localStorageKey) {
     });
 }
 
+// Call the function to render the timeline for each dock
+renderTimeline('timelineContainerBluga', 'ships'); // For Dock Bluga
+renderTimeline('timelineContainerSurabaya', 'ships_sby'); // For Dock Surabaya
+renderTimeline('timelineContainerRepair', 'ships_floating'); // For Floating Repair
 
 // =====================================================
 // 4. RENDER ALL DOCKS
